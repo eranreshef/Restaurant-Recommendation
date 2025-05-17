@@ -2,4 +2,5 @@ __pycache__/
 *.pyc
 package.zip
 .terraform/
+.terraform.lock*
 terraform.tfstate*
