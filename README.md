@@ -11,7 +11,7 @@ This project is a scalable, cloud-native restaurant recommendation system design
 * `api/`: Contains the backend API code responsible for serving restaurant recommendations.
 * `scripts/`: Includes data processing and utility scripts.
 * `terraform/`: Infrastructure-as-Code (IaC) configurations for deploying the system on cloud platforms.
-* `requirements.txt`: Lists the Python dependencies required to run the project.
+* `tests/`: Contains different testing related code.
 
 ---
 
@@ -35,6 +35,26 @@ pip install -r requirements.txt
 
 * **Terraform** (>= 1.3.x): Used for infrastructure provisioning. Install it from [terraform.io](https://developer.hashicorp.com/terraform/downloads).
 * **AWS Account**: You must have an active AWS account with the necessary IAM permissions to provision resources (e.g., DynamoDB, API Gateway, Lambda, etc.).
+
+---
+
+## ✅ Running the tests
+
+1. **Install tests dependncies:**
+
+   ```bash
+   pip install -r requirements-tests.txt
+   ```
+
+2. **Run the python logic unit tests:**
+
+   ```bash
+   cd tests
+   RESTAURANT_TABLE=fake_table pytest test_lambda_handler.py
+   ```
+
+---
+
 
 ---
 
@@ -64,7 +84,7 @@ pip install -r requirements.txt
 * 🔍 **Improved Recommendation Logic**: Integrate ML models for smarter, more personalized suggestions.
 * 🎨 **Web Frontend**: Add a simple web interface for users to interact with the API.
 * ✅ **Unit & Integration Testing**: Improve test coverage and ensure production readiness.
-* 🔁 **CI/CD Pipelines**: Automate deployment using GitHub Actions or AWS CodePipeline.
+* 🔁 **CI/CD Pipelines**: Automate deployment using GitHub Actions.
 * 📊 **Analytics Integration**: Track usage data and recommendation performance metrics.
 
 ---
