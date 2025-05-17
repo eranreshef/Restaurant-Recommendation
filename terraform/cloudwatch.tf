@@ -56,7 +56,7 @@ resource "aws_kms_key" "cloudwatch_logs" {
       {
         Sid       = "Enable IAM User Permissions",
         Effect    = "Allow",
-        Principal = { "AWS": "arn:aws:iam::${var.account_id}:root" },
+        Principal = { "AWS": "arn:aws:iam::${data.aws_caller_identity.current.account_id}:root" },
         Action    = "kms:*",
         Resource  = "*"
       },
@@ -77,3 +77,5 @@ resource "aws_kms_key" "cloudwatch_logs" {
     ]
   })
 }
+
+data "aws_caller_identity" "current" {}
