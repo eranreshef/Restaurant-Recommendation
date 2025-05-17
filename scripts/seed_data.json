@@ -1,0 +1,93 @@
+[
+    {
+      "name": "Pizza Hut",
+      "style": "Italian",
+      "address": "123 Main St, New York",
+      "openHour": "09:00",
+      "closeHour": "23:00",
+      "vegetarian": false,
+      "deliveries": true
+    },
+    {
+      "name": "Green Garden",
+      "style": "Vegetarian",
+      "address": "456 Elm St, Austin",
+      "openHour": "10:00",
+      "closeHour": "21:00",
+      "vegetarian": true,
+      "deliveries": true
+    },
+    {
+      "name": "Le Petit Bistro",
+      "style": "French",
+      "address": "789 Oak St, San Francisco",
+      "openHour": "11:00",
+      "closeHour": "22:00",
+      "vegetarian": true,
+      "deliveries": false
+    },
+    {
+      "name": "Seoul Kitchen",
+      "style": "Korean",
+      "address": "234 Pine St, Chicago",
+      "openHour": "10:30",
+      "closeHour": "20:30",
+      "vegetarian": false,
+      "deliveries": true
+    },
+    {
+      "name": "Bombay Bites",
+      "style": "Indian",
+      "address": "987 Maple St, Seattle",
+      "openHour": "08:00",
+      "closeHour": "22:00",
+      "vegetarian": true,
+      "deliveries": true
+    },
+    {
+      "name": "Dragon Express",
+      "style": "Chinese",
+      "address": "654 Cedar St, Los Angeles",
+      "openHour": "10:00",
+      "closeHour": "23:00",
+      "vegetarian": false,
+      "deliveries": true
+    },
+    {
+      "name": "Taco Fiesta",
+      "style": "Mexican",
+      "address": "321 Spruce St, Miami",
+      "openHour": "07:00",
+      "closeHour": "20:00",
+      "vegetarian": false,
+      "deliveries": false
+    },
+    {
+      "name": "Vegan Planet",
+      "style": "Vegan",
+      "address": "111 Olive St, Portland",
+      "openHour": "09:00",
+      "closeHour": "18:00",
+      "vegetarian": true,
+      "deliveries": true
+    },
+    {
+      "name": "Sushi Zen",
+      "style": "Japanese",
+      "address": "222 Sakura St, Honolulu",
+      "openHour": "12:00",
+      "closeHour": "22:00",
+      "vegetarian": false,
+      "deliveries": false
+    },
+    {
+      "name": "Falafel World",
+      "style": "Middle Eastern",
+      "address": "333 Palm St, Houston",
+      "openHour": "10:00",
+      "closeHour": "20:00",
+      "vegetarian": true,
+      "deliveries": true
+    }
+  ]
+  
