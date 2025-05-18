@@ -83,11 +83,14 @@ pip install -r requirements.txt
    api_url = "https://1234abcd.execute-api.eu-north-1.amazonaws.com"
    ```
 
-   Use it by calling `curl https://<my api url>/recommend?sentence="my search sentence"` .
-
-   For example: 
+   Use it by calling: 
    ```bash
-   $ curl https://1234abcd.execute-api.eu-north-1.amazonaws.com/recommend?sentence="An italian place"`
+   $ export sentence="Show me mexican food"
+   $ curl "https://1234abcd.execute-api.eu-north-1.amazonaws.com/recommend?sentence=$(jq -rn --arg s \"$sentence\" '$s|@uri')"`
+   ```
+   Or just type in your web browser url field:
+   ```
+   https://1234abcd.execute-api.eu-north-1.amazonaws.com/recommend?sentence="show me mexican food"
    ```
 
 ---
