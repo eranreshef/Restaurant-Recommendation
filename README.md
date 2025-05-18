@@ -76,6 +76,20 @@ pip install -r requirements.txt
 
    This will provision AWS resources like DynamoDB, Lambda functions, and API Gateway (as defined in your Terraform files).
 
+   When the `terraform apply` command exits successfuly, you will see the `api_url` where you can reach the running service.
+   ```bash
+   Outputs:
+
+   api_url = "https://1234abcd.execute-api.eu-north-1.amazonaws.com"
+   ```
+
+   Use it by calling `curl https://<my api url>/recommend?sentence="my search sentence"` .
+
+   For example: 
+   ```bash
+   $ curl https://1234abcd.execute-api.eu-north-1.amazonaws.com/recommend?sentence="An italian place"`
+   ```
+
 ---
 
 ## 🛠️ Planned Improvements
