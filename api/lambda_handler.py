@@ -17,7 +17,7 @@ table_name = os.environ.get("RESTAURANT_TABLE")
 table = dynamodb.Table(table_name)
 
 # Known styles for NLP
-KNOWN_STYLES = {"italian", "french", "korean", "chinese", "indian", "mexican", "japanese"}
+KNOWN_STYLES = {"italian", "french", "korean", "chinese", "indian", "mexican", "japanese", "vegan"}
 
 def parse_sentence(sentence: str) -> dict:
     logger.info(f"Parsing sentence: '{sentence}'")
@@ -97,8 +97,15 @@ def handler(event, context):
         }
 
     # Process request
+    filters = parse_sentence(sentence)
+    if not filters["style"]:
+        logger.warning("No supported restaurant style was supplied")
+        return {
+            "statusCode": 400,
+            "body": json.dumps({"error": f"No supported restaurant style was supplied. Supported styles are [{KNOWN_STYLES}]"}),
+            "headers": {"Content-Type": "application/json"}
+        }
     try:
-        filters = parse_sentence(sentence)
         restaurants = get_filtered_restaurants(filters["style"], filters["vegetarian"], filters["deliveries"])
 
         for r in restaurants:
@@ -114,7 +121,7 @@ def handler(event, context):
         logger.info("No matching open restaurant found.")
         return {
             "statusCode": 200,
-            "body": json.dumps({"message": "No matching open restaurant found."}),
+            "body": json.dumps({"message": "No matching restaurant found."}),
             "headers": {"Content-Type": "application/json"}
         }
 
