@@ -5,6 +5,11 @@ resource "aws_cloudwatch_log_group" "lambda_logs" {
   kms_key_id        = aws_kms_key.cloudwatch_logs.arn
 }
 
+resource "aws_cloudwatch_log_group" "api_logs" {
+  name              = "/aws/apigateway/${aws_apigatewayv2_api.http_api.name}"
+  retention_in_days = 30
+  kms_key_id        = aws_kms_key.cloudwatch_logs.arn
+}
 
 # Creates a customer-managed AWS KMS key for encrypting CloudWatch Logs
 resource "aws_kms_key" "cloudwatch_logs" {

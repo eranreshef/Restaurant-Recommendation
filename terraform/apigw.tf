@@ -25,6 +25,24 @@ resource "aws_apigatewayv2_stage" "default" {
   api_id      = aws_apigatewayv2_api.http_api.id
   name        = "$default"
   auto_deploy = true
+  
+  default_route_settings {
+    throttling_burst_limit = 500
+    throttling_rate_limit  = 1000
+    logging_level          = "INFO"
+    data_trace_enabled     = true
+  }
+  access_log_settings {
+    destination_arn = aws_cloudwatch_log_group.api_logs.arn
+    format          = jsonencode({
+      requestId       = "$context.requestId"
+      sourceIp        = "$context.identity.sourceIp"
+      requestTime     = "$context.requestTime"
+      httpMethod      = "$context.httpMethod"
+      path            = "$context.path"
+      status          = "$context.status"
+    })
+  }
 }
 
 # Grants API Gateway permission to invoke the Lambda function
