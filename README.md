@@ -34,7 +34,9 @@ pip install -r requirements.txt
 ### 🌍 Cloud & Infrastructure
 
 * **Terraform** (>= 1.3.x): Used for infrastructure provisioning. Install it from [terraform.io](https://developer.hashicorp.com/terraform/downloads).
+  If you want the terraform state file to be stored in a remote backend, make sure you properly configure it according to [these instructuoins](https://developer.hashicorp.com/terraform/language/backend).
 * **AWS Account**: You must have an active AWS account with the necessary IAM permissions to provision resources (e.g., DynamoDB, API Gateway, Lambda, etc.).
+
 
 ---
 
